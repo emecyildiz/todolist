@@ -38,5 +38,22 @@ button.addEventListener("click", function(){
 
 })
 
+function changeTheme() {
+    const theme = document.querySelector(".theme");
+    const body = document.body;
+    if (body.classList.contains("karanlık")) {
+        body.classList.remove("karanlık");
+        body.classList.add("aydınlık");
+        theme.textContent = "Dark Theme";
+        theme.style.color = "black";
+    } else {body.classList.contains("aydınlık");
+        body.classList.remove("aydınlık");
+        body.classList.add("karanlık");
+        theme.textContent = "Light Theme";
+        theme.style.color = "white";
+    }
+}
 
+const theme = document.querySelector(".theme");
+theme.addEventListener("click", changeTheme);
 
