@@ -1,4 +1,5 @@
 import { todoOlustur, loadTodosFromStorages } from "./todo.js";
+import { initializeUI, updateToggleButton } from "./ui.js";
 
 const button = document.getElementById("button");
 const container = document.getElementById("list");
@@ -7,7 +8,8 @@ const info = document.getElementById("input");
 //Sayfa Yüklenince çalışacak kod
 window.addEventListener("load",function(){
     loadTodosFromStorages(container, todoOlustur);
-    
+    initializeUI();
+    updateToggleButton();
 });
 
 //Enter a basınca çalışacak kod 

@@ -1,6 +1,7 @@
 // Çalışması gereken ana fonksyon
+import { updateToggleButton } from "./ui.js";
 
- export function loadTodosFromStorages(container, todoOlustur) {
+export function loadTodosFromStorages(container, todoOlustur) {
     for(let i = 0; i < localStorage.length; i++){
         const key = localStorage.key(i);
        if(key.startsWith("todo_")) {
@@ -43,6 +44,10 @@ export function todoOlustur(text, container) {
             newlabel.classList.remove("line");
         }
         
+        // UI güncellemesi için import edilen fonksiyonu çağır
+        if (typeof updateToggleButton === 'function') {
+            updateToggleButton();
+        }
     });
     
     newdiv.appendChild(newlabel);
